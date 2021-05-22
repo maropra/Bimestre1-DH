@@ -35,6 +35,7 @@ body{
     overflow-y: auto;
     overflow-x: hidden;
     /* opacity: 1; */
+    transition: all 0.3s ease;
 }
 .section.back-section{
     z-index: 1;
@@ -42,7 +43,7 @@ body{
 .section.active{
     /* opacity: 1; */
     z-index: 2;
-    animation: slideSection 1s ease;
+    animation: slideSection 0.5s ease;
 }
 @keyframes slideSection {
     0% {transform: translateX(100%);}
@@ -53,10 +54,6 @@ body{
     padding-top: 60px;
     padding-bottom: 70px;
 }
-
-/* .main-content{
-    padding-left: 270px;
-} */
 
 .container{
     max-width: 1100px;
@@ -82,6 +79,7 @@ body{
     z-index: 10;
     border-right: 1px solid #e8dfec;
     padding: 30px;
+    transition: all 0.3s ease;
 }
 
 .aside .logo{
@@ -131,7 +129,7 @@ body{
     cursor: pointer;
     position: fixed;
     left: 300px;
-    top: 30px;
+    top: 20px;
     z-index: 11;
     border-radius: 5px;
     background-color: #fdf9ff;
@@ -139,6 +137,7 @@ body{
     display: none;
     align-items: center;
     justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .aside .nav-toggler span{
@@ -147,6 +146,9 @@ body{
     display: inline-block;
     background-color: #ec1893;
     position: relative;
+}
+.aside .nav-toggler.open span{
+    background-color: transparent;
 }
 
 .aside .nav-toggler span::before{
@@ -158,6 +160,10 @@ body{
     left: 0;
     background-color: #ec1893;
 }
+.aside .nav-toggler.open span::before{
+    transform: rotate(45deg);
+    top: 0;
+}
 
 .aside .nav-toggler span::after{
     content: '';
@@ -167,6 +173,11 @@ body{
     top: 6px;
     left: 0;
     background-color: #ec1893;
+}
+
+.aside .nav-toggler.open span::after{
+    transform: rotate(-45deg);
+    top: 0;
 }
 
 .aside .nav{
@@ -456,16 +467,31 @@ input, textarea, select{
         display: flex;
         left: 30px;
     }
+    .aside .nav-toggler.open{
+        left: 300px;
+    }
     .aside{
         left: -270px;
+    }
+    .aside.open{
+        left: 0;
     }
     .section{
         left: 0;
     }
+    .section.open{
+        left: 270px;
+    }
+    .section .container{
+        padding-top: 70px;
+    }
+    .aside .nav{
+        margin: 50px 0;
+    }
 
     
 }
-@media (max-width: 767px){
+@media (max-width: 769px){
     .programacion .about-content .temas-info .info-item{
         flex: 0 0 50%;
         max-width: 50%;
@@ -474,6 +500,10 @@ input, textarea, select{
         flex: 0 0 50%;
         max-width: 50%;
     }
+    .section.open{
+        left: 0;
+    }
+    
 }
 
 @media (max-width: 550px){
