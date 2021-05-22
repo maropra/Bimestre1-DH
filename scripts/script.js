@@ -1,3 +1,12 @@
+//Preloader
+window.addEventListener('load', function () {
+    document.querySelector('.preloader-overlay').classList.add('opacity-0')
+    this.setTimeout(() => {
+        document.querySelector('.preloader-overlay').style.display = 'none'
+    }, 1000)
+})
+
+
 // Aside Navbar
 const nav = document.querySelector('.nav'),
     navList = nav.querySelectorAll('li'),
@@ -57,4 +66,7 @@ function asideSectionTogglerBtn() {
         allSection[i].classList.toggle('open');
     }
 }
+
+
+
 
