@@ -500,38 +500,40 @@
                     </div>
                     <!-- Contact form -->
                     <div class="row">
-                        <form action="" method="POST" class="contact-form padd-15">
+                        <form action="correo.php" method="POST" class="contact-form padd-15">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Nombre*">
+                                        <input type="text" name="nombre" class="form-control" placeholder="Nombre*"
+                                            required>
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" placeholder="Correo*">
+                                        <input type="email" name="email" class="form-control" placeholder="Correo*"
+                                            required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="Asunto*">
+                                        <input type="text" name="asunto" class="form-control" placeholder="Asunto*"
+                                            required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <textarea name="msg" class="form-control"
-                                            placeholder="Escribe aqui tu mensaje..."></textarea>
+                                        <textarea name="msg" name="msj" class="form-control"
+                                            placeholder="Escribe aqui tu mensaje..." required></textarea>
                                     </div>
                                 </div>
                             </div>
                             <div class="row ">
                                 <div class="col-12 padd-15">
                                     <button type="submit" class="btn">Enviar</button>
-
                                 </div>
                             </div>
                         </form>
