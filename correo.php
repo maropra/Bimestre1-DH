@@ -10,6 +10,8 @@
     $msjCompleto = $msj . '\nAtentamente: ' . $nombre;
 
     mail($destinatario, $asunto, $msjCompleto, $header);
-    echo '<script>alert('Correo enviado exitosamente')</script>';
-    echo '<script> setTimeout(\"location.href='index.html' \", 1000)</script>';
+    echo '<h4>Mail enviado exitosamente!</h4>';
+
+    // echo '<script>alert('Correo enviado exitosamente')</script>';
+    // echo '<script> setTimeout(\"location.href='index.html' \", 1000)</script>';
 ?>
